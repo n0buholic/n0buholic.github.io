@@ -1,1 +1,59 @@
-.
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Robby (n0buholic)'s personal portfolio showcasing fullstack development projects and tech skills."
+    />
+    <meta
+      name="keywords"
+      content="n0buholic, fullstack developer, Vue.js, web development, programming, portfolio"
+    />
+    <meta name="author" content="Robby (n0buholic)" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph for social media sharing -->
+    <meta property="og:title" content="n0buholic's Portfolio" />
+    <meta
+      property="og:description"
+      content="Explore Robby (n0buholic)'s fullstack development projects, tech stack, and passion for programming and music."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://n0buholic.github.io/" />
+    <meta
+      property="og:image"
+      content="https://n0buholic.github.io/assets/og-image.jpg"
+    />
+    <meta property="og:site_name" content="n0buholic's Portfolio" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@n0buholic" />
+    <meta name="twitter:title" content="n0buholic's Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Explore Robby (n0buholic)'s fullstack development projects and tech stack."
+    />
+    <meta
+      name="twitter:image"
+      content="https://n0buholic.github.io/assets/og-image.jpg"
+    />
+
+    <!-- Favicon and Theme -->
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <meta name="theme-color" content="#1d2021" />
+
+    <!-- Preload main.js for performance -->
+    <link rel="modulepreload" href="data:text/javascript;base64,aW1wb3J0ICcuL2Fzc2V0cy9tYWluLmNzcyc7DQppbXBvcnQgeyBjcmVhdGVBcHAgfSBmcm9tICd2dWUnOw0KaW1wb3J0IEFwcCBmcm9tICcuL0FwcC52dWUnOw0KDQovLyBGb250IEF3ZXNvbWUgc2V0dXANCmltcG9ydCB7IGxpYnJhcnkgfSBmcm9tICdAZm9ydGF3ZXNvbWUvZm9udGF3ZXNvbWUtc3ZnLWNvcmUnOw0KaW1wb3J0IHsgRm9udEF3ZXNvbWVJY29uIH0gZnJvbSAnQGZvcnRhd2Vzb21lL3Z1ZS1mb250YXdlc29tZSc7DQppbXBvcnQgew0KICBmYVN0YXIsDQogIGZhQ29kZUJyYW5jaCwNCiAgZmFDb2RlLA0KfSBmcm9tICdAZm9ydGF3ZXNvbWUvZnJlZS1zb2xpZC1zdmctaWNvbnMnOw0KaW1wb3J0IHsNCiAgZmFHaXRodWIsDQogIGZhRmFjZWJvb2ssDQogIGZhWFR3aXR0ZXIsDQogIGZhSW5zdGFncmFtLA0KICBmYVdoYXRzYXBwLA0KICBmYU1hc3RvZG9uLA0KfSBmcm9tICdAZm9ydGF3ZXNvbWUvZnJlZS1icmFuZHMtc3ZnLWljb25zJzsNCg0KLy8gQWRkIGljb25zIHRvIHRoZSBsaWJyYXJ5DQpsaWJyYXJ5LmFkZCgNCiAgZmFHaXRodWIsDQogIGZhRmFjZWJvb2ssDQogIGZhWFR3aXR0ZXIsDQogIGZhSW5zdGFncmFtLA0KICBmYVdoYXRzYXBwLA0KICBmYU1hc3RvZG9uLA0KICBmYVN0YXIsDQogIGZhQ29kZUJyYW5jaCwNCiAgZmFDb2RlDQopOw0KDQovLyBDcmVhdGUgVnVlIGFwcA0KY29uc3QgYXBwID0gY3JlYXRlQXBwKEFwcCk7DQoNCi8vIFJlZ2lzdGVyIGdsb2JhbCBjb21wb25lbnRzDQphcHAuY29tcG9uZW50KCdmb250LWF3ZXNvbWUtaWNvbicsIEZvbnRBd2Vzb21lSWNvbik7DQoNCi8vIEdsb2JhbCBlcnJvciBoYW5kbGluZw0KYXBwLmNvbmZpZy5lcnJvckhhbmRsZXIgPSAoZXJyLCB2bSwgaW5mbykgPT4gew0KICBjb25zb2xlLmVycm9yKCdWdWUgRXJyb3I6JywgZXJyKTsNCiAgY29uc29sZS5pbmZvKCdFcnJvciBJbmZvOicsIGluZm8pOw0KICAvLyBPcHRpb25hbGx5LCB5b3UgY2FuIGFkZCBhIG5vdGlmaWNhdGlvbiBzeXN0ZW0gb3IgbG9nZ2luZyBzZXJ2aWNlIGhlcmUNCiAgLy8gRXhhbXBsZTogbm90aWZ5VXNlcignQW4gZXJyb3Igb2NjdXJyZWQuIFBsZWFzZSB0cnkgYWdhaW4gbGF0ZXIuJyk7DQp9Ow0KDQovLyBQZXJmb3JtYW5jZSBvcHRpbWl6YXRpb246IEVuYWJsZSBkZXZ0b29scyBvbmx5IGluIGRldmVsb3BtZW50DQphcHAuY29uZmlnLnBlcmZvcm1hbmNlID0gaW1wb3J0Lm1ldGEuZW52LkRFVjsNCg0KLy8gTW91bnQgdGhlIGFwcA0KYXBwLm1vdW50KCcjYXBwJyk7" />
+
+    <!-- Title -->
+    <title>n0buholic | Fullstack Developer Portfolio</title>
+    <script type="module" crossorigin src="/assets/index-IU5bu8GO.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-5SEUFkuY.css">
+  </head>
+  <body class="overflow-x-hidden bg-gruvbox-dark text-gruvbox-milk font-mono">
+    <div id="app"></div>
+  </body>
+</html>
