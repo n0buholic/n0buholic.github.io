@@ -12,6 +12,14 @@
           variant="ghost"
         />
       </template>
+
+      <template #body>
+        <UNavigationMenu
+          :items="links"
+          orientation="vertical"
+          class="-mx-2.5"
+        />
+      </template>
     </UHeader>
 
     <NuxtPage />
