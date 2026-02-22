@@ -57,9 +57,9 @@
               variant="ghost"
               class="hover:bg-neutral-900 hover:text-white transition-all duration-300 rounded-full p-4 group"
             >
-              <font-awesome-icon
-                :icon="['fab', 'github']"
-                class="text-3xl transform group-hover:scale-110 transition-transform"
+              <UIcon
+                name="i-simple-icons-github"
+                class="w-8 h-8 transform group-hover:scale-110 transition-transform"
               />
             </UButton>
           </UTooltip>
@@ -71,9 +71,9 @@
               variant="ghost"
               class="hover:bg-neutral-900 hover:text-blue-500 transition-all duration-300 rounded-full p-4 group"
             >
-              <font-awesome-icon
-                :icon="['fab', 'facebook']"
-                class="text-3xl transform group-hover:scale-110 transition-transform"
+              <UIcon
+                name="i-simple-icons-facebook"
+                class="w-8 h-8 transform group-hover:scale-110 transition-transform"
               />
             </UButton>
           </UTooltip>
@@ -85,23 +85,9 @@
               variant="ghost"
               class="hover:bg-neutral-900 hover:text-pink-500 transition-all duration-300 rounded-full p-4 group"
             >
-              <font-awesome-icon
-                :icon="['fab', 'instagram']"
-                class="text-3xl transform group-hover:scale-110 transition-transform"
-              />
-            </UButton>
-          </UTooltip>
-          <UTooltip text="X (Twitter)" placement="bottom">
-            <UButton
-              to="https://x.com/n0buholic"
-              target="_blank"
-              color="neutral"
-              variant="ghost"
-              class="hover:bg-neutral-900 hover:text-neutral-300 transition-all duration-300 rounded-full p-4 group"
-            >
-              <font-awesome-icon
-                :icon="['fab', 'x-twitter']"
-                class="text-3xl transform group-hover:scale-110 transition-transform"
+              <UIcon
+                name="i-simple-icons-instagram"
+                class="w-8 h-8 transform group-hover:scale-110 transition-transform"
               />
             </UButton>
           </UTooltip>
@@ -113,9 +99,9 @@
               variant="ghost"
               class="hover:bg-neutral-900 hover:text-emerald-500 transition-all duration-300 rounded-full p-4 group"
             >
-              <font-awesome-icon
-                :icon="['fab', 'whatsapp']"
-                class="text-3xl transform group-hover:scale-110 transition-transform"
+              <UIcon
+                name="i-simple-icons-whatsapp"
+                class="w-8 h-8 transform group-hover:scale-110 transition-transform"
               />
             </UButton>
           </UTooltip>
@@ -162,7 +148,9 @@
               </h3>
             </template>
 
-            <div class="grid grid-cols-4 gap-4 mt-2">
+            <div
+              class="grid grid-cols-5 md:grid-cols-4 items-center justify-center gap-4 mt-2 w-full"
+            >
               <UTooltip
                 v-for="tech in category.items"
                 :key="tech.name"
@@ -170,7 +158,7 @@
                 placement="top"
               >
                 <div
-                  class="w-14 h-14 rounded-xl bg-neutral-950 border border-neutral-800 p-2.5 flex items-center justify-center hover:scale-110 hover:-rotate-3 hover:shadow-lg hover:shadow-primary-500/10 hover:border-primary-500/30 transition-all duration-300 cursor-help"
+                  class="mx-auto w-14 h-14 rounded-xl bg-neutral-950 border border-neutral-800 p-2.5 flex items-center justify-center hover:scale-110 hover:-rotate-3 hover:shadow-lg hover:shadow-primary-500/10 hover:border-primary-500/30 transition-all duration-300 cursor-help"
                 >
                   <img
                     :src="tech.icon"
@@ -180,6 +168,48 @@
                   />
                 </div>
               </UTooltip>
+            </div>
+          </UCard>
+        </div>
+      </section>
+
+      <!-- GitHub Stats Section -->
+      <section class="mb-24 relative z-10">
+        <div class="mb-12 text-center">
+          <h2 class="text-3xl font-bold text-white mb-4">My GitHub Activity</h2>
+          <div class="h-1 w-20 bg-primary-500 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 w-full max-w-5xl mx-auto">
+          <!-- Main Stats -->
+          <UCard
+            class="bg-neutral-900/40 backdrop-blur-md border border-neutral-800 hover:border-primary-500/50 transition-colors duration-300 overflow-hidden group"
+            :ui="{ body: { padding: 'p-0 sm:p-0' } }"
+          >
+            <div
+              class="flex justify-center items-center w-full h-full p-4 rounded-xl bg-neutral-950"
+            >
+              <img
+                src="https://github-readme-stats.vercel.app/api?username=n0buholic&show_icons=true&theme=vue-dark&bg_color=00000000&hide_border=true&title_color=10b981&text_color=d4d4d8&icon_color=10b981"
+                alt="n0buholic's GitHub Stats"
+                class="w-full max-w-[450px] object-contain drop-shadow-lg transform group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          </UCard>
+
+          <!-- Top Languages -->
+          <UCard
+            class="bg-neutral-900/40 backdrop-blur-md border border-neutral-800 hover:border-primary-500/50 transition-colors duration-300 overflow-hidden group"
+            :ui="{ body: { padding: 'p-0 sm:p-0' } }"
+          >
+            <div
+              class="flex justify-center items-center w-full h-full p-4 rounded-xl bg-neutral-950"
+            >
+              <img
+                src="https://github-readme-stats.vercel.app/api/top-langs/?username=n0buholic&layout=compact&theme=vue-dark&bg_color=00000000&hide_border=true&title_color=10b981&text_color=d4d4d8"
+                alt="n0buholic's Top Languages"
+                class="w-full max-w-[350px] object-contain drop-shadow-lg transform group-hover:scale-105 transition-transform duration-500"
+              />
             </div>
           </UCard>
         </div>
