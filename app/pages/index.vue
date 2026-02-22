@@ -1,9 +1,12 @@
 <template>
-  <div class="min-h-screen text-gruvbox-gray">
+  <div
+    class="min-h-screen text-gruvbox-gray font-sans selection:bg-gruvbox-yellow selection:text-[#202020]"
+  >
     <div
-      class="fixed inset-0 bg-gradient-to-br from-[#282828]/[.2] to-[#1d2021]/[.8] z-[-1]"
+      class="fixed inset-0 bg-gradient-to-br from-[#282828]/[.8] to-[#1d2021] z-[-1]"
     ></div>
-    <div class="fixed inset-0 z-[-1] overflow-hidden">
+
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
       <div
         v-for="(p, i) in particles"
         :key="i"
@@ -12,222 +15,295 @@
       ></div>
     </div>
 
-    <div
-      class="max-w-screen-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-12"
+    <!-- Hero Section -->
+    <UContainer
+      class="pt-24 pb-16 lg:pt-32 lg:pb-24 flex flex-col items-center justify-center min-h-[75vh]"
     >
-      <section
-        class="section mb-12 sm:mb-16 opacity-0 transition-all duration-1000"
-        :class="{ 'animate-slide-up': isMounted }"
+      <div
+        class="text-center opacity-0 transition-all duration-1000 transform translate-y-8"
+        :class="{ 'opacity-100 translate-y-0': isMounted }"
       >
-        <div class="container mx-auto px-4 py-12 text-center">
-          <div class="flex justify-center items-end gap-2 mb-6">
-            <h1
-              class="font-sans font-black text-5xl md:text-6xl text-gruvbox-yellow"
-            >
-              n0buholic
-            </h1>
+        <div
+          class="inline-flex items-center gap-3 mb-8 px-5 py-2 rounded-full bg-[#202020]/80 border border-[#333] shadow-lg backdrop-blur-md"
+        >
+          <span class="relative flex h-3 w-3">
             <span
-              class="text-2xl md:text-3xl font-mono text-gruvbox-yellow animate-pulse"
-              >.github.io</span
-            >
-          </div>
-          <p
-            class="text-gruvbox-gray text-lg md:text-xl max-w-2xl mx-auto mb-8"
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gruvbox-green opacity-75"
+            ></span>
+            <span
+              class="relative inline-flex rounded-full h-3 w-3 bg-gruvbox-green"
+            ></span>
+          </span>
+          <span class="text-sm font-medium text-gruvbox-milk"
+            >Available for new opportunities</span
           >
-            Robby (aka n0buholic), a self-taught fullstack developer with a
-            passion for programming and music.
-          </p>
-          <div class="flex justify-center gap-6 md:gap-8 text-2xl">
-            <a
-              href="https://github.com/n0buholic/"
+        </div>
+
+        <h1
+          class="font-sans font-black text-6xl md:text-7xl lg:text-8xl text-gruvbox-yellow tracking-tight mb-4 drop-shadow-2xl"
+        >
+          n0buholic
+        </h1>
+
+        <p
+          class="text-gruvbox-gray text-xl md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed font-light"
+        >
+          Self-taught
+          <strong class="text-gruvbox-aqua font-semibold"
+            >fullstack developer</strong
+          >
+          with a passion for
+          <strong class="text-gruvbox-orange font-semibold">programming</strong>
+          and <strong class="text-gruvbox-purple font-semibold">music</strong>.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-5">
+          <UTooltip text="GitHub" placement="bottom">
+            <UButton
+              to="https://github.com/n0buholic/"
               target="_blank"
-              class="group relative text-gruvbox-gray hover:text-gruvbox-yellow transition-colors duration-300"
-              aria-label="Visit GitHub profile"
+              color="neutral"
+              variant="ghost"
+              class="hover:bg-[#202020] hover:text-gruvbox-yellow transition-all duration-300 rounded-full p-4 group"
             >
               <font-awesome-icon
                 :icon="['fab', 'github']"
-                class="transform group-hover:scale-110 transition-transform duration-300"
+                class="text-3xl transform group-hover:scale-110 transition-transform"
               />
-              <span
-                class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-[#202020] text-gruvbox-yellow text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none text-nowrap"
-                >GitHub</span
-              >
-            </a>
-            <a
-              href="https://web.facebook.com/n0buholic"
+            </UButton>
+          </UTooltip>
+          <UTooltip text="Facebook" placement="bottom">
+            <UButton
+              to="https://web.facebook.com/n0buholic"
               target="_blank"
-              class="group relative text-gruvbox-gray hover:text-gruvbox-yellow transition-colors duration-300"
-              aria-label="Visit Facebook profile"
+              color="neutral"
+              variant="ghost"
+              class="hover:bg-[#202020] hover:text-gruvbox-blue transition-all duration-300 rounded-full p-4 group"
             >
               <font-awesome-icon
                 :icon="['fab', 'facebook']"
-                class="transform group-hover:scale-110 transition-transform duration-300"
+                class="text-3xl transform group-hover:scale-110 transition-transform"
               />
-              <span
-                class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-[#202020] text-gruvbox-yellow text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none text-nowrap"
-                >Facebook</span
-              >
-            </a>
-            <a
-              href="https://instagram.com/n0buholic"
+            </UButton>
+          </UTooltip>
+          <UTooltip text="Instagram" placement="bottom">
+            <UButton
+              to="https://instagram.com/n0buholic"
               target="_blank"
-              class="group relative text-gruvbox-gray hover:text-gruvbox-yellow transition-colors duration-300"
-              aria-label="Visit Instagram profile"
+              color="neutral"
+              variant="ghost"
+              class="hover:bg-[#202020] hover:text-gruvbox-purple transition-all duration-300 rounded-full p-4 group"
             >
               <font-awesome-icon
                 :icon="['fab', 'instagram']"
-                class="transform group-hover:scale-110 transition-transform duration-300"
+                class="text-3xl transform group-hover:scale-110 transition-transform"
               />
-              <span
-                class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-[#202020] text-gruvbox-yellow text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none text-nowrap"
-                >Instagram</span
-              >
-            </a>
-            <a
-              href="https://x.com/n0buholic"
+            </UButton>
+          </UTooltip>
+          <UTooltip text="X (Twitter)" placement="bottom">
+            <UButton
+              to="https://x.com/n0buholic"
               target="_blank"
-              class="group relative text-gruvbox-gray hover:text-gruvbox-yellow transition-colors duration-300"
-              aria-label="Visit X profile"
+              color="neutral"
+              variant="ghost"
+              class="hover:bg-[#202020] hover:text-gruvbox-milk transition-all duration-300 rounded-full p-4 group"
             >
               <font-awesome-icon
                 :icon="['fab', 'x-twitter']"
-                class="transform group-hover:scale-110 transition-transform duration-300"
+                class="text-3xl transform group-hover:scale-110 transition-transform"
               />
-              <span
-                class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-[#202020] text-gruvbox-yellow text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none text-nowrap"
-                >X</span
-              >
-            </a>
-            <a
-              href="https://wa.me/628979543684"
+            </UButton>
+          </UTooltip>
+          <UTooltip text="WhatsApp" placement="bottom">
+            <UButton
+              to="https://wa.me/628979543684"
               target="_blank"
-              class="group relative text-gruvbox-gray hover:text-gruvbox-yellow transition-colors duration-300"
-              aria-label="Visit WhatsApp profile"
+              color="neutral"
+              variant="ghost"
+              class="hover:bg-[#202020] hover:text-gruvbox-green transition-all duration-300 rounded-full p-4 group"
             >
               <font-awesome-icon
                 :icon="['fab', 'whatsapp']"
-                class="transform group-hover:scale-110 transition-transform duration-300"
+                class="text-3xl transform group-hover:scale-110 transition-transform"
               />
-              <span
-                class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-[#202020] text-gruvbox-yellow text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none text-nowrap"
-                >WhatsApp</span
-              >
-            </a>
+            </UButton>
+          </UTooltip>
+        </div>
+      </div>
+    </UContainer>
+
+    <UContainer class="pb-24">
+      <!-- Tech Stack -->
+      <section
+        class="mb-24 opacity-0 transition-all duration-1000 transform translate-y-8 delay-200"
+        :class="{ 'opacity-100 translate-y-0': isMounted }"
+      >
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10"
+        >
+          <div>
+            <h2
+              class="font-bold text-4xl text-gruvbox-milk mb-2 font-mono drop-shadow-md"
+            >
+              Tools & Technologies
+            </h2>
+            <p class="text-gruvbox-gray text-lg">
+              The ecosystem I work with on a daily basis
+            </p>
           </div>
         </div>
-      </section>
 
-      <section
-        class="section mb-12 sm:mb-16 opacity-0 transition-all duration-1000"
-        :class="{ 'animate-slide-up': isMounted }"
-      >
-        <div class="container mx-auto px-4 py-8">
-          <h2 class="mb-6 font-bold text-3xl text-gruvbox-yellow">
-            Tech Stack
-          </h2>
-          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <div
-              v-for="category in techStack"
-              :key="category.title"
-              class="p-6 bg-[#202020]/[.3] border-[0.5px] border-[#504945] rounded-lg"
-            >
-              <h3 class="font-semibold text-lg text-gruvbox-gray mb-4">
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <UCard
+            v-for="category in techStack"
+            :key="category.title"
+            class="bg-[#202020]/40 backdrop-blur-md border-[#333] hover:border-gruvbox-yellow/50 transition-colors duration-500 shadow-2xl group"
+            :ui="{
+              body: 'p-6 sm:p-8',
+              header: 'p-6 pb-0 sm:p-8 sm:pb-0 border-b-0',
+            }"
+          >
+            <template #header>
+              <h3
+                class="font-bold text-xl text-gruvbox-aqua group-hover:text-gruvbox-yellow transition-colors"
+              >
                 {{ category.title }}
               </h3>
-              <div class="flex flex-wrap gap-4">
+            </template>
+
+            <div class="flex flex-wrap gap-4 mt-2">
+              <UTooltip
+                v-for="tech in category.items"
+                :key="tech.name"
+                :text="tech.name"
+                placement="top"
+              >
                 <div
-                  v-for="tech in category.items"
-                  :key="tech.name"
-                  class="group relative flex items-center justify-center"
+                  class="w-14 h-14 rounded-xl bg-[#282828] border border-[#333] p-2.5 flex items-center justify-center hover:scale-110 hover:-rotate-3 hover:shadow-lg hover:shadow-gruvbox-yellow/10 hover:border-gruvbox-yellow/30 transition-all duration-300 cursor-help"
                 >
                   <img
                     :src="tech.icon"
-                    :alt="tech.name + ' icon'"
-                    class="w-12 h-12 select-none transition-transform group-hover:scale-110"
+                    :alt="tech.name"
+                    class="w-full h-full object-contain"
+                    draggable="false"
                   />
-                  <span
-                    class="absolute bottom-14 text-sm text-gruvbox-yellow bg-[#202020] px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none text-nowrap"
-                    >{{ tech.name }}</span
-                  >
                 </div>
-              </div>
+              </UTooltip>
             </div>
-          </div>
+          </UCard>
         </div>
       </section>
 
+      <!-- Projects -->
       <section
-        class="section mb-12 sm:mb-16 opacity-0 transition-all duration-1000"
-        :class="{ 'animate-slide-up': isMounted }"
+        class="opacity-0 transition-all duration-1000 transform translate-y-8 delay-500"
+        :class="{ 'opacity-100 translate-y-0': isMounted }"
       >
-        <div class="container mx-auto px-4 py-8">
-          <h2 class="mb-6 font-bold text-3xl text-gruvbox-yellow">
-            Latest Projects
-          </h2>
-          <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            <div
-              v-for="project in projects"
-              :key="project.title"
-              class="group relative flex flex-col p-5 bg-[#202020] border-[1px] border-[#333] rounded-lg hover:bg-[#2a2a2a] transition-all duration-200 cursor-pointer"
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10"
+        >
+          <div>
+            <h2
+              class="font-bold text-4xl text-gruvbox-milk mb-2 font-mono drop-shadow-md"
             >
-              <div class="mb-4">
+              Featured Projects
+            </h2>
+            <p class="text-gruvbox-gray text-lg">
+              A selection of my recent works and contributions
+            </p>
+          </div>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 group/grid">
+          <UCard
+            v-for="project in projects"
+            :key="project.title"
+            class="group bg-[#202020]/80 backdrop-blur-lg border border-[#333] hover:border-gruvbox-yellow/50 hover:shadow-2xl hover:shadow-gruvbox-yellow/10 transition-all duration-500 flex flex-col overflow-hidden relative"
+            :class="{ 'opacity-75 hover:opacity-100': project.strikethrough }"
+            :ui="{ body: 'flex-1 flex flex-col p-6', header: 'p-0 sm:p-0' }"
+          >
+            <template #header>
+              <div class="relative overflow-hidden aspect-[16/9] bg-[#282828]">
                 <img
                   :src="project.image"
-                  :alt="project.title + ' preview'"
-                  class="w-full object-cover rounded-md aspect-[16/9]"
+                  :alt="project.title"
+                  class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                 />
-              </div>
-              <div class="flex-1">
-                <h3
-                  class="font-bold text-lg text-gruvbox-yellow mb-2"
-                  :class="{ 'line-through': project.strikethrough }"
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-[#202020] via-[#202020]/30 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-75"
+                ></div>
+
+                <div
+                  v-if="project.link"
+                  class="absolute top-4 right-4 translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 z-10"
                 >
-                  {{ project.title }}
-                </h3>
-                <p class="text-gruvbox-gray text-sm mb-4 line-clamp-3">
-                  {{ project.description }}
-                </p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span
-                    v-for="tech in project.tags"
-                    :key="tech"
-                    class="px-2 py-1 bg-[#333] text-gruvbox-gray text-xs rounded-full"
-                    >{{ tech }}</span
+                  <UButton
+                    :to="project.link"
+                    target="_blank"
+                    color="neutral"
+                    variant="solid"
+                    class="rounded-full shadow-lg bg-gruvbox-yellow text-[#202020] hover:bg-gruvbox-orange transition-colors"
                   >
+                    View
+                    <font-awesome-icon
+                      :icon="['fas', 'arrow-up-right-from-square']"
+                      class="ml-1"
+                    />
+                  </UButton>
                 </div>
               </div>
-              <div class="flex gap-4 text-sm">
-                <a
-                  v-if="project.link"
-                  :href="project.link"
-                  target="_blank"
-                  class="text-gruvbox-yellow hover:underline z-10 relative"
-                  >live</a
-                >
-              </div>
-              <a
-                v-if="project.link"
-                :href="project.link"
-                target="_blank"
-                class="absolute inset-0 border-2 border-transparent group-hover:border-gruvbox-yellow rounded-lg transition-all duration-200"
-              ></a>
+            </template>
+
+            <div class="flex-1 flex flex-col relative z-20">
+              <h3
+                class="font-bold text-xl text-gruvbox-yellow mb-3 group-hover:text-gruvbox-orange transition-colors"
+                :class="{
+                  'line-through text-gruvbox-gray font-semibold':
+                    project.strikethrough,
+                }"
+              >
+                {{ project.title }}
+              </h3>
+
               <div
-                v-else
-                class="absolute inset-0 border-2 border-transparent group-hover:border-gruvbox-yellow rounded-lg transition-all duration-200 pointer-events-none"
+                class="text-gruvbox-milk/80 text-sm mb-6 flex-1 line-clamp-4 leading-relaxed"
+                v-html="formatDescription(project.description)"
               ></div>
+
+              <div
+                class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-[#333]/50"
+              >
+                <UBadge
+                  v-for="tech in project.tags"
+                  :key="tech"
+                  color="neutral"
+                  variant="subtle"
+                  class="bg-[#282828] text-gruvbox-aqua ring-1 ring-[#333] font-medium transition-colors hover:text-gruvbox-yellow hover:border-gruvbox-yellow"
+                >
+                  {{ tech }}
+                </UBadge>
+              </div>
             </div>
-          </div>
+
+            <!-- Clickable overlay if there's a link -->
+            <a
+              v-if="project.link"
+              :href="project.link"
+              target="_blank"
+              class="absolute inset-0 z-0"
+            ></a>
+          </UCard>
         </div>
       </section>
-    </div>
+    </UContainer>
 
     <footer
-      class="text-center py-8 text-gruvbox-gray text-sm border-t border-[#504945]/[.3]"
+      class="text-center py-10 text-gruvbox-gray text-sm border-t border-[#333] bg-[#1d2021]/50 backdrop-blur-md"
     >
       <p>
         &copy; {{ new Date().getFullYear() }} n0buholic. Built with
-        <span class="text-gruvbox-yellow">Vue.js</span> and
-        <span class="text-gruvbox-yellow">Tailwind CSS</span>.
+        <strong class="text-gruvbox-yellow">Nuxt</strong> and
+        <strong class="text-gruvbox-yellow">Nuxt UI</strong>.
       </p>
     </footer>
   </div>
@@ -253,14 +329,32 @@ onMounted(() => {
   }, 100);
 });
 
+const formatDescription = (desc) => {
+  return desc
+    .replace(/\n/g, "<br />")
+    .replace(
+      /\*\*(.*?)\*\*/g,
+      '<strong class="text-gruvbox-milk font-semibold">$1</strong>',
+    );
+};
+
 const techStack = [
   {
     title: "Version Control & Tools",
     items: [
       { name: "Git", icon: "https://skillicons.dev/icons?i=git" },
       { name: "GitHub", icon: "https://skillicons.dev/icons?i=github" },
-      { name: "VS Code", icon: "https://skillicons.dev/icons?i=vscode" },
+      { name: "GitLab", icon: "https://skillicons.dev/icons?i=gitlab" },
+      { name: "VSCode", icon: "https://skillicons.dev/icons?i=vscode" },
+      { name: "Bun", icon: "https://skillicons.dev/icons?i=bun" },
+      { name: "NPM", icon: "https://skillicons.dev/icons?i=npm" },
+      { name: "PNPM", icon: "https://skillicons.dev/icons?i=pnpm" },
+      { name: "Yarn", icon: "https://skillicons.dev/icons?i=yarn" },
       { name: "MySQL", icon: "https://skillicons.dev/icons?i=mysql" },
+      { name: "PostgreSQL", icon: "https://skillicons.dev/icons?i=postgresql" },
+      { name: "MongoDB", icon: "https://skillicons.dev/icons?i=mongodb" },
+      { name: "Redis", icon: "https://skillicons.dev/icons?i=redis" },
+      { name: "SQLite", icon: "https://skillicons.dev/icons?i=sqlite" },
     ],
   },
   {
@@ -269,6 +363,7 @@ const techStack = [
       { name: "HTML", icon: "https://skillicons.dev/icons?i=html" },
       { name: "CSS", icon: "https://skillicons.dev/icons?i=css" },
       { name: "JavaScript", icon: "https://skillicons.dev/icons?i=js" },
+      { name: "TypeScript", icon: "https://skillicons.dev/icons?i=ts" },
       { name: "Python", icon: "https://skillicons.dev/icons?i=python" },
       { name: "PHP", icon: "https://skillicons.dev/icons?i=php" },
     ],
@@ -281,12 +376,12 @@ const techStack = [
       { name: "Vite", icon: "https://skillicons.dev/icons?i=vite" },
       { name: "Vue.js", icon: "https://skillicons.dev/icons?i=vuejs" },
       { name: "Node.js", icon: "https://skillicons.dev/icons?i=nodejs" },
+      { name: "NestJS", icon: "https://skillicons.dev/icons?i=nestjs" },
+      { name: "Alpine.js", icon: "https://skillicons.dev/icons?i=alpinejs" },
       { name: "Laravel", icon: "https://skillicons.dev/icons?i=laravel" },
-      {
-        name: "Codeigniter",
-        icon: "https://skillicons.dev/icons?i=codeigniter",
-      },
       { name: "Electron", icon: "https://skillicons.dev/icons?i=electron" },
+      { name: "Nuxt", icon: "https://skillicons.dev/icons?i=nuxt" },
+      { name: "Next.js", icon: "https://skillicons.dev/icons?i=nextjs" },
     ],
   },
 ];
@@ -301,11 +396,11 @@ const projects = [
     link: "https://gtnest.com",
   },
   {
-    title: "Dramaboss",
+    title: "DramaBoss",
     description:
       "Dramaboss is a free online streaming platform offering a wide range of popular Chinese dramas sourced from Dramabox. Designed for an enjoyable and seamless viewing experience, it includes features such as:\n- **Full Episode Access**: Watch all episodes without subscriptions or payments.\n- **Trending & Popular Dramas**: Discover the latest and most popular dramas, regularly updated.\n- **Search Functionality**: Easily find your favorite dramas with an intuitive search feature.\n- **Diverse Categories**: Explore dramas by categories like romance, action, fantasy, and more.\nBuilt with modern technologies like **Vue.js** and **Vite**, Dramaboss provides a responsive and fast interface for both desktop and mobile devices. Visit [Dramaboss](https://dramaboss.online) to start watching your favorite Chinese dramas now!",
     image: "/projects/dramaboss-desktop.png",
-    tags: ["Vue.js", "Vite", "Laravel", "MySQL"],
+    tags: ["Nuxt", "MySQL"],
     link: "https://dramaboss.online",
   },
   {
