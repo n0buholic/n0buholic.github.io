@@ -4,14 +4,7 @@
   >
     <div class="fixed inset-0 bg-neutral-950 z-[-1]"></div>
 
-    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
-      <div
-        v-for="(p, i) in particles"
-        :key="i"
-        class="particle"
-        :style="{ left: p.left, top: p.top, animationDelay: p.delay }"
-      ></div>
-    </div>
+    <ParticlesBackground />
 
     <!-- Hero Section -->
     <UContainer
@@ -169,7 +162,7 @@
               </h3>
             </template>
 
-            <div class="flex flex-wrap gap-4 mt-2">
+            <div class="grid grid-cols-4 gap-4 mt-2">
               <UTooltip
                 v-for="tech in category.items"
                 :key="tech.name"
@@ -249,19 +242,17 @@
                 ></div>
 
                 <div
-                  v-if="project.link"
                   class="absolute top-4 right-4 translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 z-10"
                 >
                   <UButton
-                    :to="project.link"
-                    target="_blank"
+                    :to="`/projects/${project.slug}`"
                     color="primary"
                     variant="solid"
                     class="rounded-full shadow-lg"
                   >
-                    Visit
+                    View
                     <UIcon
-                      name="i-heroicons-arrow-top-right-on-square"
+                      name="i-heroicons-arrow-right"
                       class="w-4 h-4 ml-1"
                     />
                   </UButton>
@@ -300,13 +291,11 @@
               </div>
             </div>
 
-            <!-- Clickable overlay if there's a link -->
-            <a
-              v-if="project.link"
-              :href="project.link"
-              target="_blank"
+            <!-- Clickable overlay -->
+            <NuxtLink
+              :to="`/projects/${project.slug}`"
               class="absolute inset-0 z-0"
-            ></a>
+            ></NuxtLink>
           </UCard>
         </div>
       </section>
@@ -329,21 +318,12 @@ import { ref, onMounted, computed } from "vue";
 import { techStack, projects } from "~/utils/data";
 
 const isMounted = ref(false);
-const particles = ref([]);
 
 const featuredProjects = computed(() =>
   projects.filter((p) => p.featured).slice(0, 3),
 );
 
 onMounted(() => {
-  for (let i = 0; i < 20; i++) {
-    particles.value.push({
-      left: `${(Math.random() * 100).toFixed(4)}%`,
-      top: `${(Math.random() * 100).toFixed(4)}%`,
-      delay: `${(Math.random() * 5).toFixed(4)}s`,
-    });
-  }
-
   setTimeout(() => {
     isMounted.value = true;
   }, 100);

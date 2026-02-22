@@ -1,17 +1,9 @@
+```
 <template>
   <div
     class="min-h-screen text-neutral-300 font-sans selection:bg-primary-500 selection:text-neutral-900"
   >
-    <div class="fixed inset-0 bg-neutral-950 z-[-1]"></div>
-
-    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
-      <div
-        v-for="(p, i) in particles"
-        :key="i"
-        class="particle"
-        :style="{ left: p.left, top: p.top, animationDelay: p.delay }"
-      ></div>
-    </div>
+    <ParticlesBackground />
 
     <!-- Header -->
     <UContainer class="pt-24 pb-8 lg:pt-32 lg:pb-12 text-center">
@@ -91,85 +83,30 @@
           >
             <template #header>
               <div
-                class="relative overflow-hidden aspect-[16/9] bg-neutral-950 group/image"
+                class="relative overflow-hidden aspect-video bg-neutral-950 group/image"
               >
                 <img
-                  :src="
-                    activeImageModes[project.title] === 'mobile'
-                      ? project.mobileImage
-                      : project.desktopImage
-                  "
+                  :src="project.desktopImage"
                   :alt="project.title"
-                  class="w-full h-full object-cover transform transition-all duration-700"
-                  :class="{
-                    'object-contain bg-neutral-900':
-                      activeImageModes[project.title] === 'mobile',
-                    'group-hover/image:scale-105':
-                      activeImageModes[project.title] !== 'mobile',
-                  }"
+                  class="w-full h-full object-cover transform object-top transition-all duration-700 group-hover/image:scale-105"
                 />
 
                 <div
                   class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/30 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-75"
                 ></div>
 
-                <!-- View modes toggle -->
                 <div
-                  v-if="project.mobileImage"
-                  class="absolute top-4 left-4 z-20 flex gap-1 bg-neutral-900/80 backdrop-blur rounded-lg p-1 border border-neutral-700"
-                >
-                  <UTooltip text="Desktop View" placement="bottom">
-                    <button
-                      @click.prevent="
-                        activeImageModes[project.title] = 'desktop'
-                      "
-                      class="p-1.5 rounded-md transition-colors"
-                      :class="
-                        activeImageModes[project.title] === 'desktop'
-                          ? 'bg-primary-500/20 text-primary-400'
-                          : 'text-neutral-400 hover:text-neutral-200 hover:bg-neutral-800'
-                      "
-                    >
-                      <UIcon
-                        name="i-heroicons-computer-desktop"
-                        class="w-4 h-4"
-                      />
-                    </button>
-                  </UTooltip>
-                  <UTooltip text="Mobile View" placement="bottom">
-                    <button
-                      @click.prevent="
-                        activeImageModes[project.title] = 'mobile'
-                      "
-                      class="p-1.5 rounded-md transition-colors"
-                      :class="
-                        activeImageModes[project.title] === 'mobile'
-                          ? 'bg-primary-500/20 text-primary-400'
-                          : 'text-neutral-400 hover:text-neutral-200 hover:bg-neutral-800'
-                      "
-                    >
-                      <UIcon
-                        name="i-heroicons-device-phone-mobile"
-                        class="w-4 h-4"
-                      />
-                    </button>
-                  </UTooltip>
-                </div>
-
-                <div
-                  v-if="project.link"
                   class="absolute top-4 right-4 translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 z-10"
                 >
                   <UButton
-                    :to="project.link"
-                    target="_blank"
+                    :to="`/projects/${project.slug}`"
                     color="primary"
                     variant="solid"
                     class="rounded-full shadow-lg"
                   >
-                    Visit
+                    View Details
                     <UIcon
-                      name="i-heroicons-arrow-top-right-on-square"
+                      name="i-heroicons-arrow-right"
                       class="w-4 h-4 ml-1"
                     />
                   </UButton>
@@ -214,12 +151,10 @@
               </div>
             </div>
 
-            <a
-              v-if="project.link"
-              :href="project.link"
-              target="_blank"
+            <NuxtLink
+              :to="`/projects/${project.slug}`"
               class="absolute inset-0 z-0"
-            ></a>
+            ></NuxtLink>
           </UCard>
         </div>
 
@@ -235,7 +170,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed, reactive } from "vue";
+import { ref, onMounted, computed } from "vue";
 import { projects } from "~/utils/data";
 
 useHead({
@@ -243,27 +178,10 @@ useHead({
 });
 
 const isMounted = ref(false);
-const particles = ref([]);
 const activeCategory = ref("All");
 const searchQuery = ref("");
 
-// To track which image mode (desktop/mobile) is active for each project
-const activeImageModes = reactive({});
-
 onMounted(() => {
-  // Initialize modes
-  projects.forEach((p) => {
-    activeImageModes[p.title] = "desktop";
-  });
-
-  for (let i = 0; i < 20; i++) {
-    particles.value.push({
-      left: `${(Math.random() * 100).toFixed(4)}%`,
-      top: `${(Math.random() * 100).toFixed(4)}%`,
-      delay: `${(Math.random() * 5).toFixed(4)}s`,
-    });
-  }
-
   setTimeout(() => (isMounted.value = true), 100);
 });
 

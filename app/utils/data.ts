@@ -49,6 +49,7 @@ export const techStack = [
 export const projects = [
   {
     title: "GTNest - Gaming Marketplace",
+    slug: "gtnest",
     category: "Web Application",
     description:
       "GTNest is the ultimate marketplace for true gamers! Designed for the gaming community, GTNest offers a unique and engaging shopping experience, connecting enthusiasts with the gear, games, and accessories they love. More than just a platform, it's a vibrant hub where gamers can explore and elevate their gaming journey.",
@@ -60,6 +61,7 @@ export const projects = [
   },
   {
     title: "DramaBoss",
+    slug: "dramaboss",
     category: "Web Application",
     description:
       "Dramaboss is a free online streaming platform offering a wide range of popular Chinese dramas sourced from Dramabox. Designed for an enjoyable and seamless viewing experience, it includes features such as:\n- **Full Episode Access**: Watch all episodes without subscriptions or payments.\n- **Trending & Popular Dramas**: Discover the latest and most popular dramas, regularly updated.\n- **Search Functionality**: Easily find your favorite dramas with an intuitive search feature.\n- **Diverse Categories**: Explore dramas by categories like romance, action, fantasy, and more.\nBuilt with modern technologies like **Vue.js** and **Vite**, Dramaboss provides a responsive and fast interface for both desktop and mobile devices. Visit [Dramaboss](https://dramaboss.online) to start watching your favorite Chinese dramas now!",
@@ -71,6 +73,7 @@ export const projects = [
   },
   {
     title: "Haru no Sakuragi",
+    slug: "haru-no-sakuragi",
     category: "Landing Page",
     description:
       "A vibrant landing page for the Haru no Sakuragi event, showcasing event highlights and registration options.",
@@ -82,6 +85,7 @@ export const projects = [
   },
   {
     title: "L'AMOR",
+    slug: "lamor",
     category: "Web Application",
     description:
       "A web platform for L'AMOR, a drinking water service for the Riau community, providing service information and user management.",
@@ -93,6 +97,7 @@ export const projects = [
   },
   {
     title: "Fuyu no Yukikaze",
+    slug: "fuyu-no-yukikaze",
     category: "Landing Page",
     description:
       "A visually appealing landing page for the Fuyu no Yukikaze event, featuring event details and registration functionality.",
@@ -104,6 +109,7 @@ export const projects = [
   },
   {
     title: "Aki no Hajimari",
+    slug: "aki-no-hajimari",
     category: "Landing Page",
     description:
       "A dynamic landing page for the Aki no Hajimari event, offering an interactive experience with event information and registration.",
@@ -115,6 +121,7 @@ export const projects = [
   },
   {
     title: "Diversity Project",
+    slug: "diversity-project",
     category: "Landing Page",
     description:
       "A professional landing page for Diversity Project, an event organizer, showcasing upcoming events, services, and many more.",
@@ -126,6 +133,7 @@ export const projects = [
   },
   {
     title: "Arizona Marine Services",
+    slug: "arizona-marine-services",
     category: "Landing Page",
     description:
       "A modern landing page for Arizona Marine Services, highlighting marine-related services and expertise.",
@@ -137,6 +145,7 @@ export const projects = [
   },
   {
     title: "Garuda Kencana Berdikari",
+    slug: "garuda-kencana-berdikari",
     category: "Landing Page",
     description:
       "A professional landing page for Garuda Kencana Berdikari, showcasing company services and information.",
@@ -149,6 +158,7 @@ export const projects = [
   },
   {
     title: "VALORANT Challengers ID 2021",
+    slug: "valorant-challengers-id-2021",
     category: "Web Application",
     description:
       "A comprehensive platform for the VALORANT Challengers Indonesia 2021, facilitating tournament organization, player management, and match tracking.",
@@ -160,6 +170,7 @@ export const projects = [
   },
   {
     title: "SEA Icon Series ID 2021",
+    slug: "sea-icon-series-id-2021",
     category: "Web Application",
     description:
       "A dedicated platform for the SEA Icon Series Indonesia 2021, providing tools for managing esports tournaments, including participant registration, live updates, and leaderboards.",
@@ -171,6 +182,7 @@ export const projects = [
   },
   {
     title: "MGA University Championship 2021",
+    slug: "mga-university-championship-2021",
     category: "Web Application",
     description:
       "An online platform for the MGA University Championship 2021, enabling tournament registration, match scheduling, and result tracking for university-level gaming competitions.",
@@ -182,6 +194,7 @@ export const projects = [
   },
   {
     title: "Sistem Kehadiran Direktorat SMK",
+    slug: "sistem-kehadiran-direktorat-smk",
     category: "Web Application",
     description:
       "A web-based attendance management system for the SMK Directorate, designed to streamline employee attendance tracking and reporting.",

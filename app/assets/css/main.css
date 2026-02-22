@@ -1,6 +1,18 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+@theme {
+  --font-sans: 'Outfit', sans-serif;
+}
+
+@layer base {
+   button,
+   [role="button"] {
+      @apply cursor-pointer;
+      @apply disabled:cursor-not-allowed;
+   }
+}
+
 .particle {
   position: absolute;
   width: 4px;
