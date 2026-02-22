@@ -5,6 +5,10 @@
   --font-sans: 'Outfit', sans-serif;
 }
 
+* {
+  --ui-bg: var(--ui-color-neutral-950) !important;
+}
+
 @layer base {
    button,
    [role="button"] {

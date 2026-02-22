@@ -2,13 +2,9 @@
   <div
     class="min-h-screen text-neutral-400 font-sans selection:bg-primary-500 selection:text-neutral-900"
   >
-    <div class="fixed inset-0 bg-neutral-950 z-[-1]"></div>
-
-    <ParticlesBackground />
-
     <!-- Hero Section -->
     <UContainer
-      class="pt-24 pb-16 lg:pt-32 lg:pb-24 flex flex-col items-center justify-center min-h-[75vh]"
+      class="py-12 lg:py-24 flex flex-col items-center justify-center"
     >
       <div
         class="text-center opacity-0 transition-all duration-1000 transform translate-y-8"
@@ -109,7 +105,7 @@
       </div>
     </UContainer>
 
-    <UContainer class="pb-24">
+    <UContainer class="py-24">
       <!-- Tech Stack -->
       <section
         class="mb-24 opacity-0 transition-all duration-1000 transform translate-y-8 delay-200"
@@ -119,9 +115,7 @@
           class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10"
         >
           <div>
-            <h2
-              class="font-bold text-4xl text-neutral-200 mb-2 font-mono drop-shadow-md"
-            >
+            <h2 class="font-bold text-4xl text-neutral-200 mb-2 drop-shadow-md">
               Tools & Technologies
             </h2>
             <p class="text-neutral-400 text-lg">
@@ -174,10 +168,11 @@
       </section>
 
       <!-- GitHub Stats Section -->
-      <section class="mb-24 relative z-10">
+      <section class="pt-10 mb-24 relative z-10">
         <div class="mb-12 text-center">
-          <h2 class="text-3xl font-bold text-white mb-4">My GitHub Activity</h2>
-          <div class="h-1 w-20 bg-primary-500 mx-auto rounded-full"></div>
+          <h2 class="font-bold text-4xl text-neutral-200 mb-2 drop-shadow-md">
+            My GitHub Activity
+          </h2>
         </div>
 
         <div class="grid grid-cols-1 md:max-w-3xl mx-auto">
@@ -208,37 +203,17 @@
         class="opacity-0 transition-all duration-1000 transform translate-y-8 delay-300 mb-24 relative z-10"
         :class="{ 'opacity-100 translate-y-0': isMounted }"
       >
-        <div class="mb-10 text-center">
-          <p
-            class="text-primary-500 font-medium tracking-wider text-sm uppercase mb-2"
-          >
-            Trusted By
-          </p>
-          <h2 class="text-3xl font-bold text-white mb-4">
-            My Clients & Partners
-          </h2>
-          <div class="h-1 w-20 bg-primary-500 mx-auto rounded-full"></div>
-        </div>
-
-        <div class="max-w-6xl mx-auto overflow-hidden relative">
+        <div class="w-full overflow-hidden mx-auto relative">
           <!-- Fade masks -->
-          <div
-            class="absolute inset-y-0 left-0 w-24 bg-linear-to-r from-neutral-950 to-transparent z-10 pointer-events-none"
-          ></div>
-          <div
-            class="absolute inset-y-0 right-0 w-24 bg-linear-to-l from-neutral-950 to-transparent z-10 pointer-events-none"
-          ></div>
 
-          <UMarquee :repeat="4" class="py-4">
+          <UMarquee class="py-4" :ui="{ root: 'h-14', item: 'h-14' }">
             <template #default>
-              <div class="flex items-center gap-16 px-8">
-                <div
-                  v-for="(svg, idx) in clientLogos"
-                  :key="idx"
-                  class="client-logo text-neutral-500 hover:text-white transition-colors duration-300 h-10 flex items-center justify-center opacity-70 hover:opacity-100"
-                  v-html="svg"
-                ></div>
-              </div>
+              <div
+                v-for="(svg, idx) in clientLogos"
+                :key="idx"
+                class="client-logo text-neutral-500 hover:text-white transition-colors duration-300 h-10 items-center justify-center opacity-70 hover:opacity-100"
+                v-html="svg"
+              ></div>
             </template>
           </UMarquee>
         </div>
@@ -253,9 +228,7 @@
           class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10"
         >
           <div>
-            <h2
-              class="font-bold text-4xl text-neutral-200 mb-2 font-mono drop-shadow-md"
-            >
+            <h2 class="font-bold text-4xl text-neutral-200 mb-2 drop-shadow-md">
               Featured Projects
             </h2>
             <p class="text-neutral-400 text-lg">
@@ -265,7 +238,7 @@
           <UButton
             to="/projects"
             color="neutral"
-            variant="ghost"
+            variant="outline"
             class="text-primary-500 hover:text-primary-400 font-medium group"
           >
             Explore all projects
@@ -277,152 +250,15 @@
         </div>
 
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 group/grid">
-          <UCard
+          <ProjectCard
             v-for="project in featuredProjects"
             :key="project.title"
-            class="group bg-neutral-900/80 backdrop-blur-lg border border-neutral-800 hover:border-primary-500/50 hover:shadow-2xl hover:shadow-primary-500/10 transition-all duration-500 flex flex-col overflow-hidden relative"
-            :class="{ 'opacity-75 hover:opacity-100': project.strikethrough }"
-            :ui="{
-              body: 'flex-1 flex flex-col p-6',
-              header: 'p-0 sm:p-0 border-b-0',
-            }"
-          >
-            <template #header>
-              <div
-                class="relative overflow-hidden aspect-[16/9] bg-neutral-950"
-              >
-                <img
-                  :src="project.desktopImage"
-                  :alt="project.title"
-                  class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                />
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/30 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-75"
-                ></div>
-
-                <div
-                  class="absolute top-4 right-4 translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 z-10"
-                >
-                  <UButton
-                    :to="`/projects/${project.slug}`"
-                    color="primary"
-                    variant="solid"
-                    class="rounded-full shadow-lg"
-                  >
-                    View
-                    <UIcon
-                      name="i-heroicons-arrow-right"
-                      class="w-4 h-4 ml-1"
-                    />
-                  </UButton>
-                </div>
-              </div>
-            </template>
-
-            <div class="flex-1 flex flex-col relative z-20">
-              <h3
-                class="font-bold text-xl text-primary-400 mb-3 group-hover:text-primary-300 transition-colors"
-                :class="{
-                  'line-through text-neutral-500 font-semibold':
-                    project.strikethrough,
-                }"
-              >
-                {{ project.title }}
-              </h3>
-
-              <div
-                class="text-neutral-300/80 text-sm mb-6 flex-1 line-clamp-4 leading-relaxed"
-                v-html="formatDescription(project.description)"
-              ></div>
-
-              <div
-                class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-neutral-800/50"
-              >
-                <UBadge
-                  v-for="tech in project.tags"
-                  :key="tech"
-                  color="neutral"
-                  variant="subtle"
-                  class="bg-neutral-800/50 text-emerald-400 ring-1 ring-neutral-700 font-medium transition-colors hover:text-primary-400 hover:border-primary-500/50"
-                >
-                  {{ tech }}
-                </UBadge>
-              </div>
-            </div>
-
-            <!-- Clickable overlay -->
-            <NuxtLink
-              :to="`/projects/${project.slug}`"
-              class="absolute inset-0 z-0"
-            ></NuxtLink>
-          </UCard>
+            :project="project"
+            view-label="View"
+          />
         </div>
       </section>
     </UContainer>
-
-    <!-- Professional Footer -->
-    <UFooter
-      class="border-t border-neutral-800 bg-neutral-950/50 backdrop-blur-md"
-    >
-      <template #left>
-        <div
-          class="flex flex-col items-center md:items-start text-neutral-400 text-sm"
-        >
-          <p class="font-semibold text-white mb-2 text-lg">n0buholic</p>
-          <p>
-            &copy; {{ new Date().getFullYear() }} n0buholic. All rights
-            reserved.
-          </p>
-          <p class="mt-1">
-            Built with <strong class="text-primary-500">Nuxt</strong> and
-            <strong class="text-primary-500">Nuxt UI</strong>.
-          </p>
-        </div>
-      </template>
-
-      <template #right>
-        <div class="flex flex-col items-center md:items-end">
-          <p class="text-sm text-neutral-400 mb-3 md:hidden">Let's connect!</p>
-          <div class="flex gap-2">
-            <UButton
-              to="mailto:n0buholic@gmail.com"
-              color="neutral"
-              variant="ghost"
-              icon="i-heroicons-envelope"
-              class="hover:text-primary-400 transition-colors"
-              aria-label="Email Me"
-            />
-            <UButton
-              to="https://wa.me/628979543684"
-              target="_blank"
-              color="neutral"
-              variant="ghost"
-              icon="i-simple-icons-whatsapp"
-              class="hover:text-emerald-500 transition-colors"
-              aria-label="WhatsApp"
-            />
-            <UButton
-              to="https://github.com/n0buholic/"
-              target="_blank"
-              color="neutral"
-              variant="ghost"
-              icon="i-simple-icons-github"
-              class="hover:text-white transition-colors"
-              aria-label="GitHub"
-            />
-            <UButton
-              to="https://x.com/n0buholic"
-              target="_blank"
-              color="neutral"
-              variant="ghost"
-              icon="i-simple-icons-x"
-              class="hover:text-neutral-200 transition-colors"
-              aria-label="X (Twitter)"
-            />
-          </div>
-        </div>
-      </template>
-    </UFooter>
   </div>
 </template>
 
@@ -431,7 +267,7 @@ import { ref, onMounted, computed } from "vue";
 import { techStack, projects } from "~/utils/data";
 
 useHead({
-  title: computed(() => "Home"),
+  title: "Home",
 });
 
 const isMounted = ref(false);
@@ -452,13 +288,4 @@ onMounted(() => {
     isMounted.value = true;
   }, 100);
 });
-
-const formatDescription = (desc) => {
-  return desc
-    .replace(/\n/g, "<br />")
-    .replace(
-      /\*\*(.*?)\*\*/g,
-      '<strong class="text-neutral-200 font-semibold">$1</strong>',
-    );
-};
 </script>

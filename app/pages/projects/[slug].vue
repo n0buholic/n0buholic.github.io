@@ -2,9 +2,7 @@
   <div
     class="min-h-screen text-neutral-300 font-sans selection:bg-primary-500 selection:text-neutral-900 pb-24"
   >
-    <ParticlesBackground />
-
-    <UContainer class="pt-24 lg:pt-32">
+    <UContainer class="py-12 lg:py-24">
       <div
         class="opacity-0 transition-opacity duration-1000"
         :class="{ 'opacity-100': isMounted }"

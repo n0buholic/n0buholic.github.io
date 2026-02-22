@@ -11,6 +11,11 @@
       "sourceType": "github",
       "computedHash": "13182b475f624586d706d05e8d18d81ac37e5b0f731ceb79107982f9ad474931"
     },
+    "nuxt-seo": {
+      "source": "onmax/nuxt-skills",
+      "sourceType": "github",
+      "computedHash": "bffc66809f3a21055d2fd39d0bfa32eefdc681d2e93f4613fc3360addb3d3677"
+    },
     "nuxt-ui": {
       "source": "onmax/nuxt-skills",
       "sourceType": "github",
