@@ -32,3 +32,16 @@
 .animate-slide-up {
   opacity: 1 !important;
 }
+
+.client-logo svg {
+  height: 100%;
+  width: auto;
+  max-width: 160px;
+}
+
+.client-logo svg path,
+.client-logo svg polygon,
+.client-logo svg rect,
+.client-logo svg circle {
+  fill: currentColor !important;
+}

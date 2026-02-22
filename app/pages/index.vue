@@ -203,6 +203,47 @@
         </div>
       </section>
 
+      <!-- Clients Section -->
+      <section
+        class="opacity-0 transition-all duration-1000 transform translate-y-8 delay-300 mb-24 relative z-10"
+        :class="{ 'opacity-100 translate-y-0': isMounted }"
+      >
+        <div class="mb-10 text-center">
+          <p
+            class="text-primary-500 font-medium tracking-wider text-sm uppercase mb-2"
+          >
+            Trusted By
+          </p>
+          <h2 class="text-3xl font-bold text-white mb-4">
+            My Clients & Partners
+          </h2>
+          <div class="h-1 w-20 bg-primary-500 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto overflow-hidden relative">
+          <!-- Fade masks -->
+          <div
+            class="absolute inset-y-0 left-0 w-24 bg-linear-to-r from-neutral-950 to-transparent z-10 pointer-events-none"
+          ></div>
+          <div
+            class="absolute inset-y-0 right-0 w-24 bg-linear-to-l from-neutral-950 to-transparent z-10 pointer-events-none"
+          ></div>
+
+          <UMarquee :repeat="4" class="py-4">
+            <template #default>
+              <div class="flex items-center gap-16 px-8">
+                <div
+                  v-for="(svg, idx) in clientLogos"
+                  :key="idx"
+                  class="client-logo text-neutral-500 hover:text-white transition-colors duration-300 h-10 flex items-center justify-center opacity-70 hover:opacity-100"
+                  v-html="svg"
+                ></div>
+              </div>
+            </template>
+          </UMarquee>
+        </div>
+      </section>
+
       <!-- Projects -->
       <section
         class="opacity-0 transition-all duration-1000 transform translate-y-8 delay-500"
@@ -323,9 +364,7 @@
     <UFooter
       class="border-t border-neutral-800 bg-neutral-950/50 backdrop-blur-md"
     >
-      <div
-        class="px-6 py-12 max-w-7xl mx-auto w-full flex flex-col md:flex-row justify-between items-center gap-6"
-      >
+      <template #left>
         <div
           class="flex flex-col items-center md:items-start text-neutral-400 text-sm"
         >
@@ -339,10 +378,12 @@
             <strong class="text-primary-500">Nuxt UI</strong>.
           </p>
         </div>
+      </template>
 
+      <template #right>
         <div class="flex flex-col items-center md:items-end">
-          <p class="text-sm text-neutral-400 mb-3">Let's connect!</p>
-          <div class="flex gap-4">
+          <p class="text-sm text-neutral-400 mb-3 md:hidden">Let's connect!</p>
+          <div class="flex gap-2">
             <UButton
               to="mailto:n0buholic@gmail.com"
               color="neutral"
@@ -380,7 +421,7 @@
             />
           </div>
         </div>
-      </div>
+      </template>
     </UFooter>
   </div>
 </template>
@@ -389,7 +430,18 @@
 import { ref, onMounted, computed } from "vue";
 import { techStack, projects } from "~/utils/data";
 
+useHead({
+  title: computed(() => "Home"),
+});
+
 const isMounted = ref(false);
+
+const clientLogoModules = import.meta.glob("~/assets/logos/*.svg", {
+  query: "?raw",
+  eager: true,
+  import: "default",
+});
+const clientLogos = Object.values(clientLogoModules);
 
 const featuredProjects = computed(() =>
   projects.filter((p) => p.featured).slice(0, 3),
