@@ -36,7 +36,7 @@
 .client-logo svg {
   height: 100%;
   width: auto;
-  max-width: 160px;
+  max-width: none;
 }
 
 .client-logo svg path,
