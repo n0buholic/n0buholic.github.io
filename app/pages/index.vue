@@ -180,36 +180,24 @@
           <div class="h-1 w-20 bg-primary-500 mx-auto rounded-full"></div>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-6 w-full max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:max-w-3xl mx-auto">
           <!-- Main Stats -->
           <UCard
-            class="bg-neutral-900/40 backdrop-blur-md border border-neutral-800 hover:border-primary-500/50 transition-colors duration-300 overflow-hidden group"
+            class="bg-neutral-900/40 backdrop-blur-md border border-neutral-800 hover:border-primary-500/50 transition-colors duration-300 overflow-hidden group w-full"
             :ui="{ body: { padding: 'p-0 sm:p-0' } }"
           >
             <div
-              class="flex justify-center items-center w-full h-full p-4 rounded-xl bg-neutral-950"
+              class="flex justify-center items-center w-full p-4 sm:p-6 lg:p-8 rounded-xl bg-neutral-950"
             >
-              <img
-                src="https://github-readme-stats.vercel.app/api?username=n0buholic&show_icons=true&theme=vue-dark&bg_color=00000000&hide_border=true&title_color=10b981&text_color=d4d4d8&icon_color=10b981"
-                alt="n0buholic's GitHub Stats"
-                class="w-full max-w-[450px] object-contain drop-shadow-lg transform group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          </UCard>
-
-          <!-- Top Languages -->
-          <UCard
-            class="bg-neutral-900/40 backdrop-blur-md border border-neutral-800 hover:border-primary-500/50 transition-colors duration-300 overflow-hidden group"
-            :ui="{ body: { padding: 'p-0 sm:p-0' } }"
-          >
-            <div
-              class="flex justify-center items-center w-full h-full p-4 rounded-xl bg-neutral-950"
-            >
-              <img
-                src="https://github-readme-stats.vercel.app/api/top-langs/?username=n0buholic&layout=compact&theme=vue-dark&bg_color=00000000&hide_border=true&title_color=10b981&text_color=d4d4d8"
-                alt="n0buholic's Top Languages"
-                class="w-full max-w-[350px] object-contain drop-shadow-lg transform group-hover:scale-105 transition-transform duration-500"
-              />
+              <a
+                href="https://git.io/streak-stats"
+                target="_blank"
+                class="w-full block"
+                ><img
+                  src="https://streak-stats.demolab.com?user=n0buholic&theme=algolia&hide_border=true&short_numbers=true"
+                  alt="GitHub Streak"
+                  class="w-full object-cover transform opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500"
+              /></a>
             </div>
           </UCard>
         </div>
@@ -331,15 +319,69 @@
       </section>
     </UContainer>
 
-    <footer
-      class="text-center py-10 text-neutral-500 text-sm border-t border-neutral-800 bg-neutral-950/50 backdrop-blur-md"
+    <!-- Professional Footer -->
+    <UFooter
+      class="border-t border-neutral-800 bg-neutral-950/50 backdrop-blur-md"
     >
-      <p>
-        &copy; {{ new Date().getFullYear() }} n0buholic. Built with
-        <strong class="text-primary-500">Nuxt</strong> and
-        <strong class="text-primary-500">Nuxt UI</strong>.
-      </p>
-    </footer>
+      <div
+        class="px-6 py-12 max-w-7xl mx-auto w-full flex flex-col md:flex-row justify-between items-center gap-6"
+      >
+        <div
+          class="flex flex-col items-center md:items-start text-neutral-400 text-sm"
+        >
+          <p class="font-semibold text-white mb-2 text-lg">n0buholic</p>
+          <p>
+            &copy; {{ new Date().getFullYear() }} n0buholic. All rights
+            reserved.
+          </p>
+          <p class="mt-1">
+            Built with <strong class="text-primary-500">Nuxt</strong> and
+            <strong class="text-primary-500">Nuxt UI</strong>.
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center md:items-end">
+          <p class="text-sm text-neutral-400 mb-3">Let's connect!</p>
+          <div class="flex gap-4">
+            <UButton
+              to="mailto:n0buholic@gmail.com"
+              color="neutral"
+              variant="ghost"
+              icon="i-heroicons-envelope"
+              class="hover:text-primary-400 transition-colors"
+              aria-label="Email Me"
+            />
+            <UButton
+              to="https://wa.me/628979543684"
+              target="_blank"
+              color="neutral"
+              variant="ghost"
+              icon="i-simple-icons-whatsapp"
+              class="hover:text-emerald-500 transition-colors"
+              aria-label="WhatsApp"
+            />
+            <UButton
+              to="https://github.com/n0buholic/"
+              target="_blank"
+              color="neutral"
+              variant="ghost"
+              icon="i-simple-icons-github"
+              class="hover:text-white transition-colors"
+              aria-label="GitHub"
+            />
+            <UButton
+              to="https://x.com/n0buholic"
+              target="_blank"
+              color="neutral"
+              variant="ghost"
+              icon="i-simple-icons-x"
+              class="hover:text-neutral-200 transition-colors"
+              aria-label="X (Twitter)"
+            />
+          </div>
+        </div>
+      </div>
+    </UFooter>
   </div>
 </template>
 
