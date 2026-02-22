@@ -1,10 +1,8 @@
 <template>
   <div
-    class="min-h-screen text-gruvbox-gray font-sans selection:bg-gruvbox-yellow selection:text-[#202020]"
+    class="min-h-screen text-neutral-400 font-sans selection:bg-primary-500 selection:text-neutral-900"
   >
-    <div
-      class="fixed inset-0 bg-gradient-to-br from-[#282828]/[.8] to-[#1d2021] z-[-1]"
-    ></div>
+    <div class="fixed inset-0 bg-neutral-950 z-[-1]"></div>
 
     <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
       <div
@@ -24,37 +22,37 @@
         :class="{ 'opacity-100 translate-y-0': isMounted }"
       >
         <div
-          class="inline-flex items-center gap-3 mb-8 px-5 py-2 rounded-full bg-[#202020]/80 border border-[#333] shadow-lg backdrop-blur-md"
+          class="inline-flex items-center gap-3 mb-8 px-5 py-2 rounded-full bg-neutral-900/80 border border-neutral-800 shadow-lg backdrop-blur-md"
         >
           <span class="relative flex h-3 w-3">
             <span
-              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gruvbox-green opacity-75"
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"
             ></span>
             <span
-              class="relative inline-flex rounded-full h-3 w-3 bg-gruvbox-green"
+              class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"
             ></span>
           </span>
-          <span class="text-sm font-medium text-gruvbox-milk"
+          <span class="text-sm font-medium text-neutral-200"
             >Available for new opportunities</span
           >
         </div>
 
         <h1
-          class="font-sans font-black text-6xl md:text-7xl lg:text-8xl text-gruvbox-yellow tracking-tight mb-4 drop-shadow-2xl"
+          class="font-sans font-black text-6xl md:text-7xl lg:text-8xl text-primary-500 tracking-tight mb-4 drop-shadow-2xl"
         >
           n0buholic
         </h1>
 
         <p
-          class="text-gruvbox-gray text-xl md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed font-light"
+          class="text-neutral-400 text-xl md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed font-light"
         >
           Self-taught
-          <strong class="text-gruvbox-aqua font-semibold"
+          <strong class="text-primary-400 font-semibold"
             >fullstack developer</strong
           >
           with a passion for
-          <strong class="text-gruvbox-orange font-semibold">programming</strong>
-          and <strong class="text-gruvbox-purple font-semibold">music</strong>.
+          <strong class="text-amber-500 font-semibold">programming</strong> and
+          <strong class="text-indigo-400 font-semibold">music</strong>.
         </p>
 
         <div class="flex flex-wrap justify-center gap-5">
@@ -64,7 +62,7 @@
               target="_blank"
               color="neutral"
               variant="ghost"
-              class="hover:bg-[#202020] hover:text-gruvbox-yellow transition-all duration-300 rounded-full p-4 group"
+              class="hover:bg-neutral-900 hover:text-white transition-all duration-300 rounded-full p-4 group"
             >
               <font-awesome-icon
                 :icon="['fab', 'github']"
@@ -78,7 +76,7 @@
               target="_blank"
               color="neutral"
               variant="ghost"
-              class="hover:bg-[#202020] hover:text-gruvbox-blue transition-all duration-300 rounded-full p-4 group"
+              class="hover:bg-neutral-900 hover:text-blue-500 transition-all duration-300 rounded-full p-4 group"
             >
               <font-awesome-icon
                 :icon="['fab', 'facebook']"
@@ -92,7 +90,7 @@
               target="_blank"
               color="neutral"
               variant="ghost"
-              class="hover:bg-[#202020] hover:text-gruvbox-purple transition-all duration-300 rounded-full p-4 group"
+              class="hover:bg-neutral-900 hover:text-pink-500 transition-all duration-300 rounded-full p-4 group"
             >
               <font-awesome-icon
                 :icon="['fab', 'instagram']"
@@ -106,7 +104,7 @@
               target="_blank"
               color="neutral"
               variant="ghost"
-              class="hover:bg-[#202020] hover:text-gruvbox-milk transition-all duration-300 rounded-full p-4 group"
+              class="hover:bg-neutral-900 hover:text-neutral-300 transition-all duration-300 rounded-full p-4 group"
             >
               <font-awesome-icon
                 :icon="['fab', 'x-twitter']"
@@ -120,7 +118,7 @@
               target="_blank"
               color="neutral"
               variant="ghost"
-              class="hover:bg-[#202020] hover:text-gruvbox-green transition-all duration-300 rounded-full p-4 group"
+              class="hover:bg-neutral-900 hover:text-emerald-500 transition-all duration-300 rounded-full p-4 group"
             >
               <font-awesome-icon
                 :icon="['fab', 'whatsapp']"
@@ -143,11 +141,11 @@
         >
           <div>
             <h2
-              class="font-bold text-4xl text-gruvbox-milk mb-2 font-mono drop-shadow-md"
+              class="font-bold text-4xl text-neutral-200 mb-2 font-mono drop-shadow-md"
             >
               Tools & Technologies
             </h2>
-            <p class="text-gruvbox-gray text-lg">
+            <p class="text-neutral-400 text-lg">
               The ecosystem I work with on a daily basis
             </p>
           </div>
@@ -157,7 +155,7 @@
           <UCard
             v-for="category in techStack"
             :key="category.title"
-            class="bg-[#202020]/40 backdrop-blur-md border-[#333] hover:border-gruvbox-yellow/50 transition-colors duration-500 shadow-2xl group"
+            class="bg-neutral-900/40 backdrop-blur-md border border-neutral-800 hover:border-primary-500/50 transition-colors duration-500 shadow-2xl group"
             :ui="{
               body: 'p-6 sm:p-8',
               header: 'p-6 pb-0 sm:p-8 sm:pb-0 border-b-0',
@@ -165,7 +163,7 @@
           >
             <template #header>
               <h3
-                class="font-bold text-xl text-gruvbox-aqua group-hover:text-gruvbox-yellow transition-colors"
+                class="font-bold text-xl text-neutral-300 group-hover:text-primary-400 transition-colors"
               >
                 {{ category.title }}
               </h3>
@@ -179,7 +177,7 @@
                 placement="top"
               >
                 <div
-                  class="w-14 h-14 rounded-xl bg-[#282828] border border-[#333] p-2.5 flex items-center justify-center hover:scale-110 hover:-rotate-3 hover:shadow-lg hover:shadow-gruvbox-yellow/10 hover:border-gruvbox-yellow/30 transition-all duration-300 cursor-help"
+                  class="w-14 h-14 rounded-xl bg-neutral-950 border border-neutral-800 p-2.5 flex items-center justify-center hover:scale-110 hover:-rotate-3 hover:shadow-lg hover:shadow-primary-500/10 hover:border-primary-500/30 transition-all duration-300 cursor-help"
                 >
                   <img
                     :src="tech.icon"
@@ -204,33 +202,50 @@
         >
           <div>
             <h2
-              class="font-bold text-4xl text-gruvbox-milk mb-2 font-mono drop-shadow-md"
+              class="font-bold text-4xl text-neutral-200 mb-2 font-mono drop-shadow-md"
             >
               Featured Projects
             </h2>
-            <p class="text-gruvbox-gray text-lg">
+            <p class="text-neutral-400 text-lg">
               A selection of my recent works and contributions
             </p>
           </div>
+          <UButton
+            to="/projects"
+            color="neutral"
+            variant="ghost"
+            class="text-primary-500 hover:text-primary-400 font-medium group"
+          >
+            Explore all projects
+            <UIcon
+              name="i-heroicons-arrow-right"
+              class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform"
+            />
+          </UButton>
         </div>
 
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 group/grid">
           <UCard
-            v-for="project in projects"
+            v-for="project in featuredProjects"
             :key="project.title"
-            class="group bg-[#202020]/80 backdrop-blur-lg border border-[#333] hover:border-gruvbox-yellow/50 hover:shadow-2xl hover:shadow-gruvbox-yellow/10 transition-all duration-500 flex flex-col overflow-hidden relative"
+            class="group bg-neutral-900/80 backdrop-blur-lg border border-neutral-800 hover:border-primary-500/50 hover:shadow-2xl hover:shadow-primary-500/10 transition-all duration-500 flex flex-col overflow-hidden relative"
             :class="{ 'opacity-75 hover:opacity-100': project.strikethrough }"
-            :ui="{ body: 'flex-1 flex flex-col p-6', header: 'p-0 sm:p-0' }"
+            :ui="{
+              body: 'flex-1 flex flex-col p-6',
+              header: 'p-0 sm:p-0 border-b-0',
+            }"
           >
             <template #header>
-              <div class="relative overflow-hidden aspect-[16/9] bg-[#282828]">
+              <div
+                class="relative overflow-hidden aspect-[16/9] bg-neutral-950"
+              >
                 <img
-                  :src="project.image"
+                  :src="project.desktopImage"
                   :alt="project.title"
                   class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                 />
                 <div
-                  class="absolute inset-0 bg-gradient-to-t from-[#202020] via-[#202020]/30 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-75"
+                  class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/30 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-75"
                 ></div>
 
                 <div
@@ -240,14 +255,14 @@
                   <UButton
                     :to="project.link"
                     target="_blank"
-                    color="neutral"
+                    color="primary"
                     variant="solid"
-                    class="rounded-full shadow-lg bg-gruvbox-yellow text-[#202020] hover:bg-gruvbox-orange transition-colors"
+                    class="rounded-full shadow-lg"
                   >
-                    View
-                    <font-awesome-icon
-                      :icon="['fas', 'arrow-up-right-from-square']"
-                      class="ml-1"
+                    Visit
+                    <UIcon
+                      name="i-heroicons-arrow-top-right-on-square"
+                      class="w-4 h-4 ml-1"
                     />
                   </UButton>
                 </div>
@@ -256,9 +271,9 @@
 
             <div class="flex-1 flex flex-col relative z-20">
               <h3
-                class="font-bold text-xl text-gruvbox-yellow mb-3 group-hover:text-gruvbox-orange transition-colors"
+                class="font-bold text-xl text-primary-400 mb-3 group-hover:text-primary-300 transition-colors"
                 :class="{
-                  'line-through text-gruvbox-gray font-semibold':
+                  'line-through text-neutral-500 font-semibold':
                     project.strikethrough,
                 }"
               >
@@ -266,19 +281,19 @@
               </h3>
 
               <div
-                class="text-gruvbox-milk/80 text-sm mb-6 flex-1 line-clamp-4 leading-relaxed"
+                class="text-neutral-300/80 text-sm mb-6 flex-1 line-clamp-4 leading-relaxed"
                 v-html="formatDescription(project.description)"
               ></div>
 
               <div
-                class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-[#333]/50"
+                class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-neutral-800/50"
               >
                 <UBadge
                   v-for="tech in project.tags"
                   :key="tech"
                   color="neutral"
                   variant="subtle"
-                  class="bg-[#282828] text-gruvbox-aqua ring-1 ring-[#333] font-medium transition-colors hover:text-gruvbox-yellow hover:border-gruvbox-yellow"
+                  class="bg-neutral-800/50 text-emerald-400 ring-1 ring-neutral-700 font-medium transition-colors hover:text-primary-400 hover:border-primary-500/50"
                 >
                   {{ tech }}
                 </UBadge>
@@ -298,22 +313,27 @@
     </UContainer>
 
     <footer
-      class="text-center py-10 text-gruvbox-gray text-sm border-t border-[#333] bg-[#1d2021]/50 backdrop-blur-md"
+      class="text-center py-10 text-neutral-500 text-sm border-t border-neutral-800 bg-neutral-950/50 backdrop-blur-md"
     >
       <p>
         &copy; {{ new Date().getFullYear() }} n0buholic. Built with
-        <strong class="text-gruvbox-yellow">Nuxt</strong> and
-        <strong class="text-gruvbox-yellow">Nuxt UI</strong>.
+        <strong class="text-primary-500">Nuxt</strong> and
+        <strong class="text-primary-500">Nuxt UI</strong>.
       </p>
     </footer>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
+import { techStack, projects } from "~/utils/data";
 
 const isMounted = ref(false);
 const particles = ref([]);
+
+const featuredProjects = computed(() =>
+  projects.filter((p) => p.featured).slice(0, 3),
+);
 
 onMounted(() => {
   for (let i = 0; i < 20; i++) {
@@ -334,163 +354,7 @@ const formatDescription = (desc) => {
     .replace(/\n/g, "<br />")
     .replace(
       /\*\*(.*?)\*\*/g,
-      '<strong class="text-gruvbox-milk font-semibold">$1</strong>',
+      '<strong class="text-neutral-200 font-semibold">$1</strong>',
     );
 };
-
-const techStack = [
-  {
-    title: "Version Control & Tools",
-    items: [
-      { name: "Git", icon: "https://skillicons.dev/icons?i=git" },
-      { name: "GitHub", icon: "https://skillicons.dev/icons?i=github" },
-      { name: "GitLab", icon: "https://skillicons.dev/icons?i=gitlab" },
-      { name: "VSCode", icon: "https://skillicons.dev/icons?i=vscode" },
-      { name: "Bun", icon: "https://skillicons.dev/icons?i=bun" },
-      { name: "NPM", icon: "https://skillicons.dev/icons?i=npm" },
-      { name: "PNPM", icon: "https://skillicons.dev/icons?i=pnpm" },
-      { name: "Yarn", icon: "https://skillicons.dev/icons?i=yarn" },
-      { name: "MySQL", icon: "https://skillicons.dev/icons?i=mysql" },
-      { name: "PostgreSQL", icon: "https://skillicons.dev/icons?i=postgresql" },
-      { name: "MongoDB", icon: "https://skillicons.dev/icons?i=mongodb" },
-      { name: "Redis", icon: "https://skillicons.dev/icons?i=redis" },
-      { name: "SQLite", icon: "https://skillicons.dev/icons?i=sqlite" },
-    ],
-  },
-  {
-    title: "Core Web Technologies",
-    items: [
-      { name: "HTML", icon: "https://skillicons.dev/icons?i=html" },
-      { name: "CSS", icon: "https://skillicons.dev/icons?i=css" },
-      { name: "JavaScript", icon: "https://skillicons.dev/icons?i=js" },
-      { name: "TypeScript", icon: "https://skillicons.dev/icons?i=ts" },
-      { name: "Python", icon: "https://skillicons.dev/icons?i=python" },
-      { name: "PHP", icon: "https://skillicons.dev/icons?i=php" },
-    ],
-  },
-  {
-    title: "Frameworks & Libraries",
-    items: [
-      { name: "Express", icon: "https://skillicons.dev/icons?i=express" },
-      { name: "Tailwind CSS", icon: "https://skillicons.dev/icons?i=tailwind" },
-      { name: "Vite", icon: "https://skillicons.dev/icons?i=vite" },
-      { name: "Vue.js", icon: "https://skillicons.dev/icons?i=vuejs" },
-      { name: "Node.js", icon: "https://skillicons.dev/icons?i=nodejs" },
-      { name: "NestJS", icon: "https://skillicons.dev/icons?i=nestjs" },
-      { name: "Alpine.js", icon: "https://skillicons.dev/icons?i=alpinejs" },
-      { name: "Laravel", icon: "https://skillicons.dev/icons?i=laravel" },
-      { name: "Electron", icon: "https://skillicons.dev/icons?i=electron" },
-      { name: "Nuxt", icon: "https://skillicons.dev/icons?i=nuxt" },
-      { name: "Next.js", icon: "https://skillicons.dev/icons?i=nextjs" },
-    ],
-  },
-];
-
-const projects = [
-  {
-    title: "GTNest - Gaming Marketplace",
-    description:
-      "GTNest is the ultimate marketplace for true gamers! Designed for the gaming community, GTNest offers a unique and engaging shopping experience, connecting enthusiasts with the gear, games, and accessories they love. More than just a platform, it's a vibrant hub where gamers can explore and elevate their gaming journey.",
-    image: "/projects/gtnest-desktop.png",
-    tags: ["Vue.js", "Laravel", "MySQL"],
-    link: "https://gtnest.com",
-  },
-  {
-    title: "DramaBoss",
-    description:
-      "Dramaboss is a free online streaming platform offering a wide range of popular Chinese dramas sourced from Dramabox. Designed for an enjoyable and seamless viewing experience, it includes features such as:\n- **Full Episode Access**: Watch all episodes without subscriptions or payments.\n- **Trending & Popular Dramas**: Discover the latest and most popular dramas, regularly updated.\n- **Search Functionality**: Easily find your favorite dramas with an intuitive search feature.\n- **Diverse Categories**: Explore dramas by categories like romance, action, fantasy, and more.\nBuilt with modern technologies like **Vue.js** and **Vite**, Dramaboss provides a responsive and fast interface for both desktop and mobile devices. Visit [Dramaboss](https://dramaboss.online) to start watching your favorite Chinese dramas now!",
-    image: "/projects/dramaboss-desktop.png",
-    tags: ["Nuxt", "MySQL"],
-    link: "https://dramaboss.online",
-  },
-  {
-    title: "Haru no Sakuragi - Event Landing Page",
-    description:
-      "A vibrant landing page for the Haru no Sakuragi event, showcasing event highlights and registration options.",
-    image: "/projects/haru-desktop.png",
-    tags: ["Vue.js", "Laravel", "MySQL"],
-    link: "https://shiki.dvstproject.id/haru/",
-  },
-  {
-    title: "L'AMOR - Layanan Air Minum Orang Riau",
-    description:
-      "A web platform for L'AMOR, a drinking water service for the Riau community, providing service information and user management.",
-    image: "/projects/lamor-desktop.png",
-    tags: ["Vue.js", "Vite", "Laravel", "MySQL"],
-    link: "",
-  },
-  {
-    title: "Fuyu no Yukikaze - Event Landing Page",
-    description:
-      "A visually appealing landing page for the Fuyu no Yukikaze event, featuring event details and registration functionality.",
-    image: "/projects/fuyu-desktop.png",
-    tags: ["Vue.js", "Laravel", "MySQL"],
-    link: "https://shiki.dvstproject.id/fuyu/",
-  },
-  {
-    title: "Aki no Hajimari - Event Landing Page",
-    description:
-      "A dynamic landing page for the Aki no Hajimari event, offering an interactive experience with event information and registration.",
-    image: "/projects/aki-desktop.png",
-    tags: ["Vue.js", "Laravel", "MySQL"],
-    link: "https://shiki.dvstproject.id/aki/",
-  },
-  {
-    title: "Diversity Project - Event Organizer Landing Page",
-    description:
-      "A professional landing page for Diversity Project, an event organizer, showcasing upcoming events, services, and many more.",
-    image: "/projects/dvstproject-desktop.png",
-    tags: ["Wordpress", "PHP"],
-    link: "https://dvstproject.id/",
-  },
-  {
-    title: "Arizona Marine Services - Company Landing Page",
-    description:
-      "A modern landing page for Arizona Marine Services, highlighting marine-related services and expertise.",
-    image: "/projects/ams-desktop.png",
-    tags: ["Wordpress", "PHP"],
-    link: "https://arizonamarineservices.com",
-  },
-  {
-    title: "Garuda Kencana Berdikari - Company Landing Page",
-    description:
-      "A professional landing page for Garuda Kencana Berdikari, showcasing company services and information.",
-    image: "/projects/gkb-desktop.png",
-    tags: ["Wordpress", "PHP"],
-    strikethrough: true,
-    link: "",
-  },
-  {
-    title: "VALORANT Challengers Indonesia 2021 - Game Tournament Platform",
-    description:
-      "A comprehensive platform for the VALORANT Challengers Indonesia 2021, facilitating tournament organization, player management, and match tracking.",
-    image: "/projects/vct2021-desktop.png",
-    tags: ["Laravel", "PHP", "Vue.js", "MySQL"],
-    link: "",
-  },
-  {
-    title: "SEA Icon Series Indonesia 2021 - Game Tournament Platform",
-    description:
-      "A dedicated platform for the SEA Icon Series Indonesia 2021, providing tools for managing esports tournaments, including participant registration, live updates, and leaderboards.",
-    image: "/projects/seaicon-desktop.png",
-    tags: ["Laravel", "PHP", "Vue.js", "MySQL"],
-    link: "",
-  },
-  {
-    title: "MGA University Championship 2021 - Game Tournament Platform",
-    description:
-      "An online platform for the MGA University Championship 2021, enabling tournament registration, match scheduling, and result tracking for university-level gaming competitions.",
-    image: "/projects/mga-desktop.png",
-    tags: ["Laravel", "PHP", "Vue.js", "MySQL"],
-    link: "",
-  },
-  {
-    title: "Sistem Kehadiran Direktorat SMK - Attendance System",
-    description:
-      "A web-based attendance management system for the SMK Directorate, designed to streamline employee attendance tracking and reporting.",
-    image: "/projects/simpeg-desktop.png",
-    tags: ["Codeigniter4", "PHP", "MySQL"],
-    link: "",
-  },
-];
 </script>

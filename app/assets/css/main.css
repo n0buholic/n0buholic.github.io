@@ -1,33 +1,20 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
-@theme {
-  --color-gruvbox-dark: #1d2021;
-  --color-gruvbox-milk: #ebdbb2;
-  --color-gruvbox-blue: #83a598;
-  --color-gruvbox-yellow: #fabd2f;
-  --color-gruvbox-red: #fb4934;
-  --color-gruvbox-green: #b8bb26;
-  --color-gruvbox-purple: #d3869b;
-  --color-gruvbox-aqua: #8ec07c;
-  --color-gruvbox-orange: #fe8019;
-  --color-gruvbox-gray: #928374;
-}
-
 .particle {
   position: absolute;
   width: 4px;
   height: 4px;
-  background: var(--color-gruvbox-yellow);
+  background: var(--ui-primary);
   opacity: .2;
   border-radius: 50%;
   animation: float 10s infinite;
 }
 
 @keyframes float {
-  0% { transform: translateY(0); opacity: .2; }
-  50% { opacity: .4; }
-  to { transform: translateY(-100vh); opacity: .2; }
+  0% { transform: translateY(0); opacity: .1; }
+  50% { opacity: .3; }
+  to { transform: translateY(-100vh); opacity: .1; }
 }
 
 .animate-slide-up {
