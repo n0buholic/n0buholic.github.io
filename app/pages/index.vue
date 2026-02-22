@@ -92,21 +92,26 @@
               {{ project.description }}
             </p>
             <div class="flex flex-wrap gap-2 mb-4">
-              <span
+              <UBadge
                 v-for="tech in project.stack"
                 :key="tech"
-                class="px-2 py-1 text-xs bg-gruvbox-gray/30 text-gruvbox-aqua rounded"
+                color="neutral"
+                variant="subtle"
+                class="bg-gruvbox-gray/30 text-gruvbox-aqua ring-0"
               >
                 {{ tech }}
-              </span>
+              </UBadge>
             </div>
-            <a
-              :href="project.link"
+            <UButton
+              :to="project.link"
               target="_blank"
-              class="inline-flex items-center gap-2 text-gruvbox-blue hover:text-gruvbox-yellow transition-colors font-bold"
+              color="neutral"
+              variant="ghost"
+              class="px-0 font-bold hover:text-gruvbox-yellow text-gruvbox-blue transition-colors gap-2"
             >
-              View Project <font-awesome-icon :icon="['fas', 'code']" />
-            </a>
+              View Project
+              <font-awesome-icon :icon="['fas', 'code']" class="ml-1" />
+            </UButton>
           </div>
         </div>
       </div>
