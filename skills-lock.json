@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "skills": {
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "computedHash": "6412eb4eb3b91595ebab937f0c69501240e7ba761b3d82510b5cf506ec5c7adc"
+    },
+    "nuxt": {
+      "source": "onmax/nuxt-skills",
+      "sourceType": "github",
+      "computedHash": "13182b475f624586d706d05e8d18d81ac37e5b0f731ceb79107982f9ad474931"
+    },
+    "nuxt-ui": {
+      "source": "onmax/nuxt-skills",
+      "sourceType": "github",
+      "computedHash": "2abcc38cf1c4a65b11fea3a0a5673897073c09aeea8009e7055074ff30ddb607"
+    },
+    "tailwindcss-advanced-layouts": {
+      "source": "josiahsiegel/claude-plugin-marketplace",
+      "sourceType": "github",
+      "computedHash": "fa08c5757b8f24df2d412543d370bc25d8c14eadeb27be4112b2354323f5889f"
+    },
+    "vue": {
+      "source": "onmax/nuxt-skills",
+      "sourceType": "github",
+      "computedHash": "db16f1d73f2221c7a0f7e013d884297302fd78eb0186bf16a546ef5735d2dd46"
+    }
+  }
+}
